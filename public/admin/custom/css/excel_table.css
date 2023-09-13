@@ -1,0 +1,54 @@
+.mt-5 {
+    margin-top: 3rem !important;
+}
+
+.mx-2 {
+    margin-right: 0.5rem !important;
+    margin-left: 0.5rem !important;
+}
+
+.ExcelTable {
+    border: 1px solid #B0CBEF;
+    border-width: 1px 0px 0px 1px;
+    font-family: Calibri;
+    font-weight: 100;
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+
+.ExcelTable TH {
+    background-image: url(../image/excel-header-bg.gif);
+    background-repeat: repeat-x;
+    font-weight: normal;
+    font-size: 14px;
+    border: 1px solid #9EB6CE;
+    border-width: 0px 1px 1px 0px;
+    height: 17px;
+}
+
+.ExcelTable TD {
+    border: 0px;
+    background-color: white;
+    padding: 2px 4px;
+    border: 1px solid #D0D7E5;
+    border-width: 0px 1px 1px 0px;
+}
+
+.ExcelTable TD B {
+    border: 0px;
+    background-color: white;
+    font-weight: bold;
+}
+
+.ExcelTable TD.heading {
+    background-color: #E4ECF7;
+    text-align: center;
+    border: 1px solid #9EB6CE;
+    border-width: 0px 1px 1px 0px;
+}
+
+.ExcelTable TH.heading {
+    background-image: url(../image/excel-header-left.gif);
+    background-position: center;
+    background-size: cover;
+}

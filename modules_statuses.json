@@ -1,0 +1,14 @@
+{
+    "Project": true,
+    "Admin": true,
+    "Common": true,
+    "Service": true,
+    "Blog": true,
+    "Client": true,
+    "Payment": true,
+    "Branch": true,
+    "Attentance": true,
+    "Coaches": true,
+    "Coache": true,
+    "Coach": true
+}

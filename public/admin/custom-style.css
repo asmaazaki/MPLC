@@ -1,0 +1,11 @@
+.nav-pills .nav-link {
+    color: #212529;
+}
+
+/*.main-sidebar{*/
+/*    border-right: 1px solid #e6e6e6;*/
+/*}*/
+
+.nav-sidebar>.nav-item {
+    font-size:20px;
+}

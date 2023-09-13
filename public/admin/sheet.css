@@ -1,0 +1,60 @@
+body {
+    box-sizing: border-box;
+    padding: 1em .5em;
+}
+
+@page {
+    size: auto;
+    margin: 0mm;
+
+}
+
+.header .flexing {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header .flexing #Logo {
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+}
+
+.header .flexing #Logo .ln-1 {
+    font-size: 24px;
+}
+
+.header .flexing #Logo .ln-2 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.header .flexing #Logo .ln-3 {
+    font-size: 18px;
+}
+
+
+#print {
+    margin-top: 5em;
+}
+
+#print table {
+    width: 100%;
+}
+
+#print table,
+#print th,
+#print td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: .85em;
+}
+
+.grey {
+    background-color: #999;
+}
+
+.grey {
+    background-color: #999;
+}
