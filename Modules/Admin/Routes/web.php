@@ -18,24 +18,27 @@ use Modules\Admin\Http\Controllers\DashboardController;
 */
 
 
-Route::group(['middleware' => ['auth:admin']], function () {
-    Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin-panel');
+Route::group(
+    [
+
+        'middleware' => [ 'auth:admin' ]
 
 
-    Route::get('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin-logout');
+    ],
+     function () {
+    Route::get('admin/dashboard', [DashboardController::class, 'index'])->name('admin-panel');
+    Route::get('admin/logout', [AdminAuthController::class, 'logout'])->name('admin-logout');
 
-    Route::post('change/branch',[AdminAuthController::class,'ChangeBranch'])->name('ChangeBranch');
-
-    Route::get('admins/index',[AdminAuthController::class,'index'])->name('admin.index');
-    Route::get('admin/sync/permission/{id}',[AdminAuthController::class,'permission'])->name('permission');
-    Route::post('admin/sync/permission/{id}',[AdminAuthController::class,'SyncPermission'])->name('SyncPermission');
-    Route::get('admins/create',[AdminAuthController::class,'create'])->name('admin.create');
-    Route::post('admins/create',[AdminAuthController::class,'store'])->name('admin.store');
-    Route::get('admins/edit/{id}',[AdminAuthController::class,'edit'])->name('admin.edit');
-    Route::post('admins/edit/{id}',[AdminAuthController::class,'update'])->name('admin.update');
-    Route::post('admins/destroy/{id}',[AdminAuthController::class,'destroy'])->name('admin.destroy');
+    Route::get('admins/index',[AdminController::class,'index'])->name('admin.index');
+    Route::get('admin/sync/permission/{id}',[AdminController::class,'permission'])->name('permission');
+    Route::post('admin/sync/permission/{id}',[AdminController::class,'SyncPermission'])->name('SyncPermission');
+    Route::get('admins/create',[AdminController::class,'create'])->name('admin.create');
+    Route::post('admins/create',[AdminController::class,'store'])->name('admin.store');
+    Route::get('admins/edit/{id}',[AdminController::class,'edit'])->name('admin.edit');
+    Route::post('admins/edit/{id}',[AdminController::class,'update'])->name('admin.update');
+    Route::post('admins/destroy/{id}',[AdminController::class,'destroy'])->name('admin.destroy');
 
 });
 
-Route::post('/login-admin', [AdminController::class, 'login'])->name('admin-login');
-Route::get('/admin/login', [AdminController::class, 'loginForm'])->name('admin-login-form');
+Route::post('/login-admin', [AdminAuthController::class, 'login'])->name('admin-login');
+Route::get('/admin/login', [AdminAuthController::class, 'loginForm'])->name('admin-login-form');

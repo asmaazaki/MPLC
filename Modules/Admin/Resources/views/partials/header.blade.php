@@ -16,15 +16,17 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
+
+
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false">
-                <i class="flag-icon flag-icon-us"></i>
+                <i class="flag-icon {{ Session::get('applocale') == 'ar' ? 'flag-icon-sa' : 'flag-icon-us' }} mr-2"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right p-0" style="left: inherit; right: 0px;">
-                <a href="#" class="dropdown-item active">
+                <a href="{{ url('admin/change-lang', ['en']) }}" class="dropdown-item " rel="alternate" hreflang="en">
                     <i class="flag-icon flag-icon-us mr-2"></i> English
                 </a>
-                <a href="#" class="dropdown-item">
+                <a href="{{ url('admin/change-lang', ['ar']) }}" class="dropdown-item " rel="alternate" hreflang="ar">
                     <i class="flag-icon flag-icon-sa  mr-2"></i> Arabic
                 </a>
             </div>

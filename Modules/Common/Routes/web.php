@@ -15,5 +15,5 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth:admi
     Route::resource('partner', PartnerController::class)->except(['show']);
     Route::resource('team', TeamController::class)->except(['show']);
     Route::put('setting/update', [SettingController::class, 'update'])->name('setting.update');
-    Route::get('/change-lang/{lang}', [LanguageController::class, 'change']);
+    Route::get('/change-lang/{lang}', [LanguageController::class, 'change'])->name('change_lang');
 });

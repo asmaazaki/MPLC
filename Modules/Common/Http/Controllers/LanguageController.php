@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Session;
 use Modules\CommonModule\Helper\arabicdate;
 use Modules\CommonModule\Helper\LanguageHelper;
 use Modules\CommonModule\Entities\Apps;
+use Illuminate\Support\Facades\App;
 
 class LanguageController extends Controller
 {

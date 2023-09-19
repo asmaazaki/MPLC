@@ -3,9 +3,12 @@
 namespace Modules\Admin\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use Modules\Admin\Http\Requests\AdminLoginRequest;
+use Modules\Admin\Entities\Admin;
+use Modules\Admin\Http\Requests\StoreAdminRequest;
+use Modules\Admin\Http\Requests\UpdateAdminRequest;
+use Spatie\Permission\Models\Permission;
 
-use Session;
+
 
 class AdminController extends Controller
 {
@@ -17,24 +20,49 @@ class AdminController extends Controller
     }
     public function index()
     {
-        return view('admin::layouts.app');
+        $admins=Admin::where('email','!=','admin@admin.com')->get();
+        return view('admin::admin.index',compact('admins'));
     }
 
-    public function loginForm()
+    public function create()
     {
-
-        return view('admin::auth.login');
+        $permissions=Permission::get();
+        return view('admin::admin.create',compact('permissions'));
     }
 
-    public function login(AdminLoginRequest $request)
+    public function store(StoreAdminRequest $request)
     {
+        $admin=Admin::create($request->validated());
+        $admin->syncPermissions($request->permission);
+        return redirect()->route('admin.index')->with('success', 'Done successfully');
+    }
 
-        if (auth()->guard('admin')->attempt($request->validated())) {
-
-            return redirect()->route('admin-panel');
-        }
+    public function edit($id)
+    {
+        $admin=Admin::find($id);
+        $permissions=Permission::get();
+        return view('admin::admin.edit',compact('admin','permissions'));
 
     }
+
+    public function update($id,UpdateAdminRequest $request)
+    {
+        $admin=Admin::find($id);
+        $admin->update($request->validated());
+        $admin->syncPermissions($request->permission);
+        return redirect()->route('admin.index')->with('success', 'Done successfully');
+    }
+
+    public function destroy($id)
+    {
+        Admin::find($id)->delete();
+        return redirect()->back()->with('success', 'Done successfully');
+
+    }
+
+
+
+
 
 
 }

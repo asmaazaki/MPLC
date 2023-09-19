@@ -1,7 +1,7 @@
 <footer class="main-footer">
-    <strong>Copyright &copy; 2023 <a href="dotbytes.net">Dot Bytes</a>.</strong>
+    <strong>Copyright &copy; 2023 <a href="dotbytes.net">A.S.F</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 1.0.0
+        <b>Version</b> 1.0.0
     </div>
-  </footer>
+</footer>

@@ -30,13 +30,13 @@
                          </p>
                      </a>
                  </li> -->
-                 <li class="nav-header">Dashboard</li>
+                 <li class="nav-header">{{ __('admin::sidebar.dashboard') }}</li>
                  @if (auth('admin')->user()->can('about_us'))
                      <li class="nav-item">
                          <a href="" class="nav-link">
                              <i class="nav-icon fas fa-ellipsis-h"></i>
                              <p>
-                                 About_us
+                                 {{ __('admin::sidebar.about_us') }}
                              </p>
                          </a>
                      </li>
@@ -47,7 +47,7 @@
                          <a href="" class="nav-link">
                              <i class="nav-icon fas fa-ellipsis-h"></i>
                              <p>
-                                 Solutions
+                                 {{ __('admin::sidebar.solutions') }}
                              </p>
                          </a>
                      </li>
@@ -62,7 +62,7 @@
                          <a href="" class="nav-link">
                              <i class="nav-icon fas fa-ellipsis-h"></i>
                              <p>
-                                 Services
+                                 {{ __('admin::sidebar.services') }}
                              </p>
                          </a>
                      </li>
@@ -73,7 +73,7 @@
                          <a href="" class="nav-link">
                              <i class="nav-icon fas fa-ellipsis-h"></i>
                              <p>
-                                 Vendors Expertise
+                                 {{ __('admin::sidebar.vendors expertise') }}
                              </p>
                          </a>
                      </li>
@@ -107,7 +107,7 @@
 
 
 
-                 <li class="nav-header">SETTINGS</li>
+                 <li class="nav-header">{{ __('admin::sidebar.settings') }}</li>
 
 
                  @if (auth('admin')->user()->can('users'))
@@ -115,44 +115,16 @@
                          <a href="{{ route('admin.index') }}" class="nav-link">
                              <i class="nav-icon fas fa-ellipsis-h"></i>
                              <p>
-                                 Users
+                                 {{ __('admin::sidebar.users') }}
                              </p>
                          </a>
                      </li>
                  @endif
 
-                 @if (auth('admin')->user()->can('branches'))
-                     <li class="nav-item">
-                         <a href="{{ route('admin.branch.index') }}" class="nav-link">
-                             <i class="nav-icon fas fa-ellipsis-h"></i>
-                             <p>
 
-                             </p>
-                         </a>
-                     </li>
-                 @endif
 
-                 @if (auth('admin')->user()->can('client_sheet'))
-                     <li class="nav-item">
-                         <a href="{{ route('admin.class.index') }}" class="nav-link">
-                             <i class="nav-icon fas fa-ellipsis-h"></i>
-                             <p>
 
-                             </p>
-                         </a>
-                     </li>
-                 @endif
 
-                 @if (auth('admin')->user()->can('plans'))
-                     <li class="nav-item">
-                         <a href="{{ route('admin.plan.index') }}" class="nav-link">
-                             <i class="nav-icon fas fa-ellipsis-h"></i>
-                             <p>
-
-                             </p>
-                         </a>
-                     </li>
-                 @endif
 
 
 
